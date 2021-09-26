@@ -1,0 +1,143 @@
+root@ip-172-31-43-154:~/DevOps260921# history
+    1  ssh-keygen
+    2  cat /root/.ssh/id_rsa.pub 
+    3  git clone git@github.com:dharanidalal/DevOps260921.git
+    4  ls -ltr
+    5  cd DevOps260921/
+    6  ls -ltr
+    7  ls -la
+    8  vi app.py
+    9  git status
+   10  git add app.py 
+   11  git status
+   12  git commit -m "commiting app.py"
+   13  git log
+   14  git config --global user.name "Dharani Dalal"
+   15  git config --global user.email "dharanid.rymec@gmail.com"
+   16  git pul
+   17  git pull
+   18  ls
+   19  vi app.py
+   20  git status
+   21  git add app.py 
+   22  git status
+   23  git commit -m "Adding some more to the code"
+   24  git log
+   25  git push
+   26  vi app.py 
+   27  git diff
+   28  git add app.py 
+   29  git status
+   30  git commit -m "Adding another print stmt"
+   31  git log
+   32  git push
+   33  git branch dev
+   34  git branch
+   35  git checkout dev
+   36  ls
+   37  cat app.py 
+   38  vi app.py 
+   39  git add app.py 
+   40  git commit -m "file modified from dev branch"
+   41  git log
+   42  git branch
+   43  git checkout master
+   44  git log
+   45  git checkout dev
+   46  cat app.py 
+   47  git branch
+   48  git checkout master
+   49  git log
+   50  git status
+   51  git merge dev
+   52  git log
+   53  git push
+   54  git log
+   55  git branch
+   56  git checkout dev
+   57  git push origin dev
+   58  git branch
+   59  vi app.py 
+   60  git status
+   61  git add app.py 
+   62  git commit -m "added fourth line from dev branch"
+   63  git log
+   64  git checkout master
+   65  git log
+   66  touch file1.py
+   67  git status
+   68  git add file1.py 
+   69  git commit -m "file1 added from master"
+   70  git log
+   71  git status
+   72  git checkout dev
+   73  git log
+   74  git checkout master
+   75  git status
+   76  git push
+   77  git checkout dev
+   78  git rebase master
+   79  git log
+   80  git merge dev
+   81  git log
+   82  git status
+   83  git checkout master
+   84  git merge dev
+   85  git log
+   86  git push
+   87  git log
+   88  git branch
+   89  ls
+   90  git checkout dev
+   91  vi app.py 
+   92  git status
+   93  git diff app.py
+   94  git add app.py 
+   95  git commit -m "Commit from dev for conflict understanding"
+   96  git checkout master
+   97  vi app.py 
+   98  git add app.py 
+   99  git commit -m "This is from master to understand the conflict"
+  100  git log
+  101  git merge dev
+  102  git mergetool
+  103  vi app.py
+  104  git mergetool
+  105  git add app.py.orig 
+  106  ls
+  107  git app app.py
+  108  git log
+  109  ls -ltr
+  110  ls -lt
+  111  git status
+  112  git remove app.py.orig
+  113  git add
+  114  ls -ltr
+  115  git status
+  116  ls
+  117  git status
+  118  git .ignore
+  119  vi .gitignrore
+  120  git status
+  121  git add .gitignrore 
+  122  git commit -m "added git ignore files"
+  123  git log
+  124  touch test.class
+  125  cat .gitignrore 
+  126  touch test.pyc
+  127  git status
+  128  git merge dev
+  129  git push
+  130  git log
+  131  git revert ff12e57a307cf7625ac1c55ccefce8268cdf0544
+  132  git status
+  133  git add test.pyc
+  134  git status
+  135  git reset --mixed
+  136  git status
+  137  git add test.pyc 
+  138  git status
+  139  git reset --hard
+  140  git status
+  141  history
+
