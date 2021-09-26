@@ -1,0 +1,1336 @@
+MacBook-Pro:Downloads dharani$ chmod 600 training.pem 
+MacBook-Pro:Downloads dharani$ cd ~/Downloads/
+MacBook-Pro:Downloads dharani$ cd
+MacBook-Pro:~ dharani$ ssh -i ~/Downloads/training.pem ec2@3.15.205.155
+ec2@3.15.205.155: Permission denied (publickey).
+MacBook-Pro:~ dharani$ ssh -i ~/Downloads/training.pem ubuntu@3.15.205.155
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-1045-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Sep 26 14:23:23 UTC 2021
+
+  System load:  0.01              Processes:             104
+  Usage of /:   8.8% of 14.48GB   Users logged in:       1
+  Memory usage: 22%               IPv4 address for eth0: 172.31.43.154
+  Swap usage:   0%
+
+
+1 update can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Sun Sep 26 14:21:16 2021 from 3.16.146.0
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-43-154:~$ hf
+hf: command not found
+ubuntu@ip-172-31-43-154:~$ hostname
+ip-172-31-43-154
+ubuntu@ip-172-31-43-154:~$ w
+ 14:23:32 up 9 min,  2 users,  load average: 0.01, 0.02, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+ubuntu   pts/0    3.16.146.0       14:21    2:16   0.03s  0.03s -bash
+ubuntu   pts/1    70.187.217.164   14:23    4.00s  0.03s  0.00s w
+ubuntu@ip-172-31-43-154:~$ exit
+logout
+Connection to 3.15.205.155 closed.
+MacBook-Pro:~ dharani$ ssh -i ~/Downloads/training.pem ubuntu@3.15.205.155
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-1045-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Sep 26 14:31:20 UTC 2021
+
+  System load:  0.96              Processes:             105
+  Usage of /:   8.8% of 14.48GB   Users logged in:       1
+  Memory usage: 23%               IPv4 address for eth0: 172.31.43.154
+  Swap usage:   0%
+
+
+1 update can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Sun Sep 26 14:31:08 2021 from 3.16.146.0
+ubuntu@ip-172-31-43-154:~$ sudo apt install git
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+git is already the newest version (1:2.25.1-1ubuntu3.1).
+git set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+ubuntu@ip-172-31-43-154:~$ git clone git@github.com:dharanidalal/DevOps260921.git
+Cloning into 'DevOps260921'...
+The authenticity of host 'github.com (140.82.113.3)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,140.82.113.3' (RSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ubuntu@ip-172-31-43-154:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/ubuntu/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/ubuntu/.ssh/id_rsa
+Your public key has been saved in /home/ubuntu/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:18qpPFmUFYx7PVps4nJaHeIaQ28IUmOATwtlf3ZM25Q ubuntu@ip-172-31-43-154
+The key's randomart image is:
++---[RSA 3072]----+
+|     o+.   oo... |
+|    o...+ .oo+E  |
+|     + +..o++o.  |
+|      + .o=o+ B  |
+|       .S+.*.B o |
+|         o*oO .  |
+|         o+X     |
+|       .o.o      |
+|        o.       |
++----[SHA256]-----+
+ubuntu@ip-172-31-43-154:~$ ls -la
+total 32
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep 26 14:37 .
+drwxr-xr-x 3 root   root   4096 Sep 26 14:14 ..
+-rw------- 1 ubuntu ubuntu   19 Sep 26 14:23 .bash_history
+-rw-r--r-- 1 ubuntu ubuntu  220 Feb 25  2020 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu 3771 Feb 25  2020 .bashrc
+drwx------ 2 ubuntu ubuntu 4096 Sep 26 14:21 .cache
+-rw-r--r-- 1 ubuntu ubuntu  807 Feb 25  2020 .profile
+drwx------ 2 ubuntu ubuntu 4096 Sep 26 14:38 .ssh
+-rw-r--r-- 1 ubuntu ubuntu    0 Sep 26 14:23 .sudo_as_admin_successful
+ubuntu@ip-172-31-43-154:~$ sudo -i
+root@ip-172-31-43-154:~# ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:c4mpB8J4f8PYHdAVxsav9H4yz/hClpH36tjxAdcMBlY root@ip-172-31-43-154
+The key's randomart image is:
++---[RSA 3072]----+
+|           o*oE  |
+|         . ++.   |
+|        . .. .o. |
+|   o     + ...+oo|
+|  . + . S +. + =+|
+|   . o * + .. B .|
+|      + * .  +.o |
+|       o .   o*=o|
+|            ..+B=|
++----[SHA256]-----+
+root@ip-172-31-43-154:~# cat /root/.ssh/id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDjgSYxwY5ePZQz7Lers4l/BLbN/VKgVDU6iJnbvh/VXTe9QAefiV8GPyyS7+ldNcw1EVM2vA52OOvC/bvNuk+serU320jPUeUcv6R8BNCKs7d8l+KPIE/jRmBWCoQP53TbUdRV6VYIv+PsBe/mE6+H8UbFfKZOln+icp3JCXnpsQFAuU4vzoXrs+uBbIHWZz2F06t+1hU1g5W4MyRh9RoU/IkY4l7FFDCYh2pB4xlV2Nf1cUrwijJsMfQCNrEV656xs8TezVWHZYKfqJppjqCprg2/kNPLLbwMK5HO+5q8mZ2lbnAO0+gB6CmyZCzuZpfywiAzcpi6XNhoNiM79rPT0/CcLhvFm6+i/pF9PX1FdidG2KGL49H4zWjy9baZ0gS9WGM2Sg86JBMA5a5bb7BkJ1UR6lj7CPW8vHIkhqa8lZmkRh4WvK07nKLttQMeYVApTngzdbNjoOp6+h7oJohWRvZlRJLVqbni4lam8QhLLYm7tLLcFJ7uAXI1HfAb2sE= root@ip-172-31-43-154
+root@ip-172-31-43-154:~# ssh-keygengit clone git@github.com:dharanidalal/DevOps260921.git^C
+root@ip-172-31-43-154:~# git clone git@github.com:dharanidalal/DevOps260921.git
+Cloning into 'DevOps260921'...
+The authenticity of host 'github.com (140.82.112.4)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,140.82.112.4' (RSA) to the list of known hosts.
+warning: You appear to have cloned an empty repository.
+root@ip-172-31-43-154:~# ls -ltr
+total 8
+drwxr-xr-x 4 root root 4096 Sep 26 14:14 snap
+drwxr-xr-x 3 root root 4096 Sep 26 14:41 DevOps260921
+root@ip-172-31-43-154:~# cd DevOps260921/
+root@ip-172-31-43-154:~/DevOps260921# ls -ltr
+total 0
+root@ip-172-31-43-154:~/DevOps260921# ls -la
+total 12
+drwxr-xr-x 3 root root 4096 Sep 26 14:41 .
+drwx------ 5 root root 4096 Sep 26 14:41 ..
+drwxr-xr-x 7 root root 4096 Sep 26 14:41 .git
+root@ip-172-31-43-154:~/DevOps260921# vi app.py
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-43-154:~/DevOps260921# git add app.py 
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   app.py
+
+root@ip-172-31-43-154:~/DevOps260921# git commit -m "commiting app.py"
+[master (root-commit) 8ce4335] commiting app.py
+ Committer: root <root@ip-172-31-43-154.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 app.py
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 8ce433501178ad7a4dfb718501d67dc6b279c28b (HEAD -> master)
+Author: root <root@ip-172-31-43-154.us-east-2.compute.internal>
+Date:   Sun Sep 26 14:48:51 2021 +0000
+
+    commiting app.py
+root@ip-172-31-43-154:~/DevOps260921# git config --global user.name "Dharani Dalal"
+root@ip-172-31-43-154:~/DevOps260921# git config --global user.email "dharanid.rymec@gmail.com"
+root@ip-172-31-43-154:~/DevOps260921# git pul
+git: 'pul' is not a git command. See 'git --help'.
+
+The most similar commands are
+	pull
+	push
+root@ip-172-31-43-154:~/DevOps260921# git pull
+Warning: Permanently added the RSA host key for IP address '140.82.112.3' to the list of known hosts.
+Your configuration specifies to merge with the ref 'refs/heads/master'
+from the remote, but no such ref was fetched.
+root@ip-172-31-43-154:~/DevOps260921# ls
+app.py
+root@ip-172-31-43-154:~/DevOps260921# vi app.py
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@ip-172-31-43-154:~/DevOps260921# git add app.py 
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   app.py
+
+root@ip-172-31-43-154:~/DevOps260921# git commit -m "Adding some more to the code"
+[master 02da940] Adding some more to the code
+ 1 file changed, 2 insertions(+)
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 02da9402a97fe209694f591db6b9859a08198c67 (HEAD -> master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+    Adding some more to the code
+
+commit 8ce433501178ad7a4dfb718501d67dc6b279c28b
+Author: root <root@ip-172-31-43-154.us-east-2.compute.internal>
+Date:   Sun Sep 26 14:48:51 2021 +0000
+
+    commiting app.py
+root@ip-172-31-43-154:~/DevOps260921# git push
+Warning: Permanently added the RSA host key for IP address '140.82.113.3' to the list of known hosts.
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 510 bytes | 510.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To github.com:dharanidalal/DevOps260921.git
+ * [new branch]      master -> master
+root@ip-172-31-43-154:~/DevOps260921# vi app.py 
+root@ip-172-31-43-154:~/DevOps260921# git diff
+diff --git a/app.py b/app.py
+index 0c0eb5c..f43afe6 100644
+--- a/app.py
++++ b/app.py
+@@ -1,3 +1,3 @@
+ print("Hello World!")
+ print("My devops")
+-
++print("another change")
+root@ip-172-31-43-154:~/DevOps260921# git add app.py 
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   app.py
+
+root@ip-172-31-43-154:~/DevOps260921# git commit -m "Adding another print stmt"
+[master 25cebfc] Adding another print stmt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f (HEAD -> master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67 (origin/master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+    Adding some more to the code
+
+commit 8ce433501178ad7a4dfb718501d67dc6b279c28b
+Author: root <root@ip-172-31-43-154.us-east-2.compute.internal>
+Date:   Sun Sep 26 14:48:51 2021 +0000
+
+    commiting app.py
+root@ip-172-31-43-154:~/DevOps260921# git push
+Warning: Permanently added the RSA host key for IP address '140.82.113.4' to the list of known hosts.
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 305 bytes | 305.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:dharanidalal/DevOps260921.git
+   02da940..25cebfc  master -> master
+root@ip-172-31-43-154:~/DevOps260921# git branch dev
+root@ip-172-31-43-154:~/DevOps260921# git branch
+  dev
+* master
+root@ip-172-31-43-154:~/DevOps260921# git checkout dev
+Switched to branch 'dev'
+root@ip-172-31-43-154:~/DevOps260921# ls
+app.py
+root@ip-172-31-43-154:~/DevOps260921# cat app.py 
+print("Hello World!")
+print("My devops")
+print("another change")
+root@ip-172-31-43-154:~/DevOps260921# vi app.py 
+root@ip-172-31-43-154:~/DevOps260921# git add app.py 
+root@ip-172-31-43-154:~/DevOps260921# git commit -m "file modified from dev branch"
+[dev f9938c9] file modified from dev branch
+ 1 file changed, 2 insertions(+)
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit f9938c9891deea2c324c07f227a4396284c420c8 (HEAD -> dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f (origin/master, master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+    Adding some more to the code
+
+commit 8ce433501178ad7a4dfb718501d67dc6b279c28b
+Author: root <root@ip-172-31-43-154.us-east-2.compute.internal>
+Date:   Sun Sep 26 14:48:51 2021 +0000
+
+    commiting app.py
+root@ip-172-31-43-154:~/DevOps260921# git branch
+* dev
+  master
+root@ip-172-31-43-154:~/DevOps260921# git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f (HEAD -> master, origin/master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+    Adding some more to the code
+
+commit 8ce433501178ad7a4dfb718501d67dc6b279c28b
+Author: root <root@ip-172-31-43-154.us-east-2.compute.internal>
+Date:   Sun Sep 26 14:48:51 2021 +0000
+
+    commiting app.py
+root@ip-172-31-43-154:~/DevOps260921# git checkout dev
+Switched to branch 'dev'
+root@ip-172-31-43-154:~/DevOps260921# cat app.py 
+print("Hello World!")
+print("My devops")
+print("another change")
+print("branching and cod dev by dev1")
+
+root@ip-172-31-43-154:~/DevOps260921# git branch
+* dev
+  master
+root@ip-172-31-43-154:~/DevOps260921# git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f (HEAD -> master, origin/master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+    Adding some more to the code
+
+commit 8ce433501178ad7a4dfb718501d67dc6b279c28b
+Author: root <root@ip-172-31-43-154.us-east-2.compute.internal>
+Date:   Sun Sep 26 14:48:51 2021 +0000
+
+    commiting app.py
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f (HEAD -> master, origin/master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+    Adding some more to the code
+
+commit 8ce433501178ad7a4dfb718501d67dc6b279c28b
+Author: root <root@ip-172-31-43-154.us-east-2.compute.internal>
+Date:   Sun Sep 26 14:48:51 2021 +0000
+
+    commiting app.py
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+root@ip-172-31-43-154:~/DevOps260921# git merge dev
+Updating 25cebfc..f9938c9
+Fast-forward
+ app.py | 2 ++
+ 1 file changed, 2 insertions(+)
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit f9938c9891deea2c324c07f227a4396284c420c8 (HEAD -> master, dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f (origin/master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+    Adding some more to the code
+
+commit 8ce433501178ad7a4dfb718501d67dc6b279c28b
+Author: root <root@ip-172-31-43-154.us-east-2.compute.internal>
+Date:   Sun Sep 26 14:48:51 2021 +0000
+
+    commiting app.py
+root@ip-172-31-43-154:~/DevOps260921# git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 332 bytes | 332.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:dharanidalal/DevOps260921.git
+   25cebfc..f9938c9  master -> master
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit f9938c9891deea2c324c07f227a4396284c420c8 (HEAD -> master, origin/master, dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+    Adding some more to the code
+
+commit 8ce433501178ad7a4dfb718501d67dc6b279c28b
+Author: root <root@ip-172-31-43-154.us-east-2.compute.internal>
+Date:   Sun Sep 26 14:48:51 2021 +0000
+
+root@ip-172-31-43-154:~/DevOps260921# git branch
+  dev
+* master
+root@ip-172-31-43-154:~/DevOps260921# git checkout dev
+Switched to branch 'dev'
+root@ip-172-31-43-154:~/DevOps260921# git push origin dev
+Warning: Permanently added the RSA host key for IP address '140.82.114.3' to the list of known hosts.
+Total 0 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/dharanidalal/DevOps260921/pull/new/dev
+remote: 
+To github.com:dharanidalal/DevOps260921.git
+ * [new branch]      dev -> dev
+root@ip-172-31-43-154:~/DevOps260921# git branch
+* dev
+  master
+root@ip-172-31-43-154:~/DevOps260921# vi app.py 
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@ip-172-31-43-154:~/DevOps260921# git add app.py 
+root@ip-172-31-43-154:~/DevOps260921# git commit -m "added fourth line from dev branch"
+[dev 6f77248] added fourth line from dev branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 6f772487a3710b96daa34224cfd6bb0fa3c93ba4 (HEAD -> dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:54:38 2021 +0000
+
+    added fourth line from dev branch
+
+commit f9938c9891deea2c324c07f227a4396284c420c8 (origin/master, origin/dev, master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+root@ip-172-31-43-154:~/DevOps260921# git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit f9938c9891deea2c324c07f227a4396284c420c8 (HEAD -> master, origin/master, origin/dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+    Adding some more to the code
+
+commit 8ce433501178ad7a4dfb718501d67dc6b279c28b
+Author: root <root@ip-172-31-43-154.us-east-2.compute.internal>
+Date:   Sun Sep 26 14:48:51 2021 +0000
+
+root@ip-172-31-43-154:~/DevOps260921# touch file1.py
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	file1.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-43-154:~/DevOps260921# git add file1.py 
+root@ip-172-31-43-154:~/DevOps260921# git commit -m "file1 added from master"
+[master 2f1c653] file1 added from master
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.py
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 2f1c653b7b82c3f00164f8437f23492230c2ca97 (HEAD -> master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:55:53 2021 +0000
+
+    file1 added from master
+
+commit f9938c9891deea2c324c07f227a4396284c420c8 (origin/master, origin/dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+    Adding some more to the code
+root@ip-172-31-43-154:~/DevOps260921# 
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+root@ip-172-31-43-154:~/DevOps260921# git checkout dev
+Switched to branch 'dev'
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 6f772487a3710b96daa34224cfd6bb0fa3c93ba4 (HEAD -> dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:54:38 2021 +0000
+
+    added fourth line from dev branch
+
+commit f9938c9891deea2c324c07f227a4396284c420c8 (origin/master, origin/dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+    Adding some more to the code
+root@ip-172-31-43-154:~/DevOps260921# git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+root@ip-172-31-43-154:~/DevOps260921# git push
+Warning: Permanently added the RSA host key for IP address '140.82.114.4' to the list of known hosts.
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 282 bytes | 282.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:dharanidalal/DevOps260921.git
+   f9938c9..2f1c653  master -> master
+root@ip-172-31-43-154:~/DevOps260921# git checkout dev
+Switched to branch 'dev'
+root@ip-172-31-43-154:~/DevOps260921# git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: added fourth line from dev branch
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 14b61d5950b9c059d9a84cebc3ca7528d6d242e9 (HEAD -> dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:54:38 2021 +0000
+
+    added fourth line from dev branch
+
+commit 2f1c653b7b82c3f00164f8437f23492230c2ca97 (origin/master, master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:55:53 2021 +0000
+
+    file1 added from master
+
+commit f9938c9891deea2c324c07f227a4396284c420c8 (origin/dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+root@ip-172-31-43-154:~/DevOps260921# git merge dev
+Already up to date.
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 14b61d5950b9c059d9a84cebc3ca7528d6d242e9 (HEAD -> dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:54:38 2021 +0000
+
+    added fourth line from dev branch
+
+commit 2f1c653b7b82c3f00164f8437f23492230c2ca97 (origin/master, master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:55:53 2021 +0000
+
+    file1 added from master
+
+commit f9938c9891deea2c324c07f227a4396284c420c8 (origin/dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch dev
+nothing to commit, working tree clean
+root@ip-172-31-43-154:~/DevOps260921# git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+root@ip-172-31-43-154:~/DevOps260921# git merge dev
+Updating 2f1c653..14b61d5
+Fast-forward
+ app.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+root@ip-172-31-43-154:~/DevOps260921# git push^C
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 14b61d5950b9c059d9a84cebc3ca7528d6d242e9 (HEAD -> master, dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:54:38 2021 +0000
+
+    added fourth line from dev branch
+
+commit 2f1c653b7b82c3f00164f8437f23492230c2ca97 (origin/master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:55:53 2021 +0000
+
+    file1 added from master
+
+commit f9938c9891deea2c324c07f227a4396284c420c8 (origin/dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+root@ip-172-31-43-154:~/DevOps260921# git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 364 bytes | 364.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:dharanidalal/DevOps260921.git
+   2f1c653..14b61d5  master -> master
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 14b61d5950b9c059d9a84cebc3ca7528d6d242e9 (HEAD -> master, origin/master, dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:54:38 2021 +0000
+
+    added fourth line from dev branch
+
+commit 2f1c653b7b82c3f00164f8437f23492230c2ca97
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:55:53 2021 +0000
+
+    file1 added from master
+
+commit f9938c9891deea2c324c07f227a4396284c420c8 (origin/dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+root@ip-172-31-43-154:~/DevOps260921# git branch
+  dev
+* master
+root@ip-172-31-43-154:~/DevOps260921# ls
+app.py  file1.py
+root@ip-172-31-43-154:~/DevOps260921# vi app.py^C
+root@ip-172-31-43-154:~/DevOps260921# git checkout dev
+Switched to branch 'dev'
+root@ip-172-31-43-154:~/DevOps260921# vi app.py 
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+root@ip-172-31-43-154:~/DevOps260921# git diff app.py
+diff --git a/app.py b/app.py
+index 8610da1..4856ed4 100644
+--- a/app.py
++++ b/app.py
+@@ -1,5 +1,6 @@
+ print("Hello World!")
+ print("My devops")
+ print("another change")
++print("This is for testing conflict from dev")
+ print("branching and cod dev by dev1")
+ print("This is another change in dev branch")
+root@ip-172-31-43-154:~/DevOps260921# git add app.py 
+root@ip-172-31-43-154:~/DevOps260921# git commit -m "Commit from dev for conflict understanding"
+[dev 2a74ba4] Commit from dev for conflict understanding
+ 1 file changed, 1 insertion(+)
+root@ip-172-31-43-154:~/DevOps260921# git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+root@ip-172-31-43-154:~/DevOps260921# vi app.py 
+root@ip-172-31-43-154:~/DevOps260921# git add app.py 
+root@ip-172-31-43-154:~/DevOps260921# git commit -m "This is from master to understand the conflict"
+[master 439333f] This is from master to understand the conflict
+ 1 file changed, 1 insertion(+)
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 439333f99c45f2ac1089cd9fe6eed892660b10ed (HEAD -> master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 16:03:05 2021 +0000
+
+    This is from master to understand the conflict
+
+commit 14b61d5950b9c059d9a84cebc3ca7528d6d242e9 (origin/master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:54:38 2021 +0000
+
+    added fourth line from dev branch
+
+commit 2f1c653b7b82c3f00164f8437f23492230c2ca97
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:55:53 2021 +0000
+
+    file1 added from master
+
+commit f9938c9891deea2c324c07f227a4396284c420c8 (origin/dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+root@ip-172-31-43-154:~/DevOps260921# git merge dev
+Auto-merging app.py
+CONFLICT (content): Merge conflict in app.py
+Automatic merge failed; fix conflicts and then commit the result.
+root@ip-172-31-43-154:~/DevOps260921# git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+tortoisemerge emerge vimdiff
+Merging:
+app.py
+
+Normal merge conflict for 'app.py':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff): 
+4 files to edit
+root@ip-172-31-43-154:~/DevOps260921# vi app.py
+root@ip-172-31-43-154:~/DevOps260921# git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+tortoisemerge emerge vimdiff
+No files need merging
+root@ip-172-31-43-154:~/DevOps260921# git add app.py.orig 
+root@ip-172-31-43-154:~/DevOps260921# ls
+app.py  app.py.orig  file1.py
+root@ip-172-31-43-154:~/DevOps260921# git app app.py
+git: 'app' is not a git command. See 'git --help'.
+
+The most similar command is
+	apply
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit 439333f99c45f2ac1089cd9fe6eed892660b10ed (HEAD -> master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 16:03:05 2021 +0000
+
+    This is from master to understand the conflict
+
+commit 14b61d5950b9c059d9a84cebc3ca7528d6d242e9 (origin/master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:54:38 2021 +0000
+
+    added fourth line from dev branch
+
+commit 2f1c653b7b82c3f00164f8437f23492230c2ca97
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:55:53 2021 +0000
+
+    file1 added from master
+
+commit f9938c9891deea2c324c07f227a4396284c420c8 (origin/dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+
+    file modified from dev branch
+
+commit 25cebfc28166a96f95d79cad201ebb128a9d443f
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:57:00 2021 +0000
+
+    Adding another print stmt
+
+commit 02da9402a97fe209694f591db6b9859a08198c67
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 14:51:57 2021 +0000
+
+root@ip-172-31-43-154:~/DevOps260921# ls -ltr
+total 8
+-rw-r--r-- 1 root root   0 Sep 26 15:58 file1.py
+-rw-r--r-- 1 root root 286 Sep 26 16:03 app.py.orig
+-rw-r--r-- 1 root root 261 Sep 26 16:06 app.py
+root@ip-172-31-43-154:~/DevOps260921# ls -lt
+total 8
+-rw-r--r-- 1 root root 261 Sep 26 16:06 app.py
+-rw-r--r-- 1 root root 286 Sep 26 16:03 app.py.orig
+-rw-r--r-- 1 root root   0 Sep 26 15:58 file1.py
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+	modified:   app.py
+	new file:   app.py.orig
+
+root@ip-172-31-43-154:~/DevOps260921# git remove app.py.orig
+git: 'remove' is not a git command. See 'git --help'.
+
+The most similar command is
+	remote
+root@ip-172-31-43-154:~/DevOps260921# git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+root@ip-172-31-43-154:~/DevOps260921# ls -ltr
+total 8
+-rw-r--r-- 1 root root   0 Sep 26 15:58 file1.py
+-rw-r--r-- 1 root root 286 Sep 26 16:03 app.py.orig
+-rw-r--r-- 1 root root 261 Sep 26 16:06 app.py
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+	modified:   app.py
+	new file:   app.py.orig
+
+root@ip-172-31-43-154:~/DevOps260921# ls
+app.py  app.py.orig  file1.py
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+	modified:   app.py
+	new file:   app.py.orig
+
+root@ip-172-31-43-154:~/DevOps260921# git .ignore
+git: '.ignore' is not a git command. See 'git --help'.
+root@ip-172-31-43-154:~/DevOps260921# vi .ignore^C
+root@ip-172-31-43-154:~/DevOps260921# vi .gitignrore
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+	modified:   app.py
+	new file:   app.py.orig
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignrore
+
+root@ip-172-31-43-154:~/DevOps260921# git add .gitignrore 
+root@ip-172-31-43-154:~/DevOps260921# git commit -m "added git ignore files"
+[master ff12e57] added git ignore files
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit ff12e57a307cf7625ac1c55ccefce8268cdf0544 (HEAD -> master)
+Merge: 439333f 2a74ba4
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 16:11:34 2021 +0000
+
+    added git ignore files
+
+commit 439333f99c45f2ac1089cd9fe6eed892660b10ed
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 16:03:05 2021 +0000
+
+    This is from master to understand the conflict
+
+commit 2a74ba4d9baae2b4d6cff648c7cbd031d13f891f (dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 16:02:07 2021 +0000
+
+    Commit from dev for conflict understanding
+
+commit 14b61d5950b9c059d9a84cebc3ca7528d6d242e9 (origin/master)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:54:38 2021 +0000
+
+    added fourth line from dev branch
+
+commit 2f1c653b7b82c3f00164f8437f23492230c2ca97
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:55:53 2021 +0000
+
+    file1 added from master
+
+commit f9938c9891deea2c324c07f227a4396284c420c8 (origin/dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+root@ip-172-31-43-154:~/DevOps260921# 
+root@ip-172-31-43-154:~/DevOps260921# touch test.class
+root@ip-172-31-43-154:~/DevOps260921# cat .gitignrore 
+*.pyc
+app.py.orig
+*.class
+root@ip-172-31-43-154:~/DevOps260921# touch test.pyc
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test.class
+	test.pyc
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-43-154:~/DevOps260921# git push ^C
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test.class
+	test.pyc
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-43-154:~/DevOps260921# git merge dev
+Already up to date.
+root@ip-172-31-43-154:~/DevOps260921# git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (11/11), 1.06 KiB | 1.06 MiB/s, done.
+Total 11 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), done.
+To github.com:dharanidalal/DevOps260921.git
+   14b61d5..ff12e57  master -> master
+root@ip-172-31-43-154:~/DevOps260921# git log
+commit ff12e57a307cf7625ac1c55ccefce8268cdf0544 (HEAD -> master, origin/master)
+Merge: 439333f 2a74ba4
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 16:11:34 2021 +0000
+
+    added git ignore files
+
+commit 439333f99c45f2ac1089cd9fe6eed892660b10ed
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 16:03:05 2021 +0000
+
+    This is from master to understand the conflict
+
+commit 2a74ba4d9baae2b4d6cff648c7cbd031d13f891f (dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 16:02:07 2021 +0000
+
+    Commit from dev for conflict understanding
+
+commit 14b61d5950b9c059d9a84cebc3ca7528d6d242e9
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:54:38 2021 +0000
+
+    added fourth line from dev branch
+
+commit 2f1c653b7b82c3f00164f8437f23492230c2ca97
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:55:53 2021 +0000
+
+    file1 added from master
+
+commit f9938c9891deea2c324c07f227a4396284c420c8 (origin/dev)
+Author: Dharani Dalal <dharanid.rymec@gmail.com>
+Date:   Sun Sep 26 15:46:13 2021 +0000
+root@ip-172-31-43-154:~/DevOps260921# git revert ff12e57a307cf7625ac1c55ccefce8268cdf0544
+error: commit ff12e57a307cf7625ac1c55ccefce8268cdf0544 is a merge but no -m option was given.
+fatal: revert failed
+root@ip-172-31-43-154:~/DevOps260921# ^C
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test.class
+	test.pyc
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-43-154:~/DevOps260921# git add test.pyc
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   test.pyc
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test.class
+
+root@ip-172-31-43-154:~/DevOps260921# git reset --mixed
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test.class
+	test.pyc
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-43-154:~/DevOps260921# git add test.pyc 
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   test.pyc
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test.class
+
+root@ip-172-31-43-154:~/DevOps260921# git reset --hard
+HEAD is now at ff12e57 added git ignore files
+root@ip-172-31-43-154:~/DevOps260921# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	test.class
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@ip-172-31-43-154:~/DevOps260921# history
+    1  ssh-keygen
+    2  cat /root/.ssh/id_rsa.pub 
+    3  git clone git@github.com:dharanidalal/DevOps260921.git
+    4  ls -ltr
+    5  cd DevOps260921/
+    6  ls -ltr
+    7  ls -la
+    8  vi app.py
+    9  git status
+   10  git add app.py 
+   11  git status
+   12  git commit -m "commiting app.py"
+   13  git log
+   14  git config --global user.name "Dharani Dalal"
+   15  git config --global user.email "dharanid.rymec@gmail.com"
+   16  git pul
+   17  git pull
+   18  ls
+   19  vi app.py
+   20  git status
+   21  git add app.py 
+   22  git status
+   23  git commit -m "Adding some more to the code"
+   24  git log
+   25  git push
+   26  vi app.py 
+   27  git diff
+   28  git add app.py 
+   29  git status
+   30  git commit -m "Adding another print stmt"
+   31  git log
+   32  git push
+   33  git branch dev
+   34  git branch
+   35  git checkout dev
+   36  ls
+   37  cat app.py 
+   38  vi app.py 
+   39  git add app.py 
+   40  git commit -m "file modified from dev branch"
+   41  git log
+   42  git branch
+   43  git checkout master
+   44  git log
+   45  git checkout dev
+   46  cat app.py 
+   47  git branch
+   48  git checkout master
+   49  git log
+   50  git status
+   51  git merge dev
+   52  git log
+   53  git push
+   54  git log
+   55  git branch
+   56  git checkout dev
+   57  git push origin dev
+   58  git branch
+   59  vi app.py 
+   60  git status
+   61  git add app.py 
+   62  git commit -m "added fourth line from dev branch"
+   63  git log
+   64  git checkout master
+   65  git log
+   66  touch file1.py
+   67  git status
+   68  git add file1.py 
+   69  git commit -m "file1 added from master"
+   70  git log
+   71  git status
+   72  git checkout dev
+   73  git log
+   74  git checkout master
+   75  git status
+   76  git push
+   77  git checkout dev
+   78  git rebase master
+   79  git log
+   80  git merge dev
+   81  git log
+   82  git status
+   83  git checkout master
+   84  git merge dev
+   85  git log
+   86  git push
+   87  git log
+   88  git branch
+   89  ls
+   90  git checkout dev
+   91  vi app.py 
+   92  git status
+   93  git diff app.py
+   94  git add app.py 
+   95  git commit -m "Commit from dev for conflict understanding"
+   96  git checkout master
+   97  vi app.py 
+   98  git add app.py 
+   99  git commit -m "This is from master to understand the conflict"
+  100  git log
+  101  git merge dev
+  102  git mergetool
+  103  vi app.py
+  104  git mergetool
+  105  git add app.py.orig 
+  106  ls
+  107  git app app.py
+  108  git log
+  109  ls -ltr
+  110  ls -lt
+  111  git status
+  112  git remove app.py.orig
+  113  git add
+  114  ls -ltr
+  115  git status
+  116  ls
+  117  git status
+  118  git .ignore
+  119  vi .gitignrore
+  120  git status
+  121  git add .gitignrore 
+  122  git commit -m "added git ignore files"
+  123  git log
+  124  touch test.class
+  125  cat .gitignrore 
+  126  touch test.pyc
+  127  git status
+  128  git merge dev
+  129  git push
+  130  git log
+  131  git revert ff12e57a307cf7625ac1c55ccefce8268cdf0544
+  132  git status
+  133  git add test.pyc
+  134  git status
+  135  git reset --mixed
+  136  git status
+  137  git add test.pyc 
+  138  git status
+  139  git reset --hard
+  140  git status
+  141  history
+root@ip-172-31-43-154:~/DevOps260921# vi githistory
+root@ip-172-31-43-154:~/DevOps260921# git add githistory 
+root@ip-172-31-43-154:~/DevOps260921# git commit -m "Git commands"
+[master c0e8546] Git commands
+ 1 file changed, 143 insertions(+)
+ create mode 100644 githistory
+root@ip-172-31-43-154:~/DevOps260921# git push 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.22 KiB | 1.22 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:dharanidalal/DevOps260921.git
+   ff12e57..c0e8546  master -> master
+
