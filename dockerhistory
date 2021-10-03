@@ -1,0 +1,89 @@
+ 219  vi app.py
+  220  docker build -t devops03102021:1.0 .
+  221  ls
+  222  cat Dockerfile 
+  223  vi Dockerfile 
+  224  docker images
+  225  docker build -t devops03102021:1.0 .
+  226  docker images
+  227  ls
+  228  docker ps
+  229  docker ps -a
+  230  docker rm charming_cartwright
+  231  docker ps -a
+  232  docker run -d --name first -p 8000:8080 devops03102021
+  233  docker run -d --name first -p 8000:8080 devops03102021:1.0
+  234  docker ps
+  235  curl localhost:8000
+  236  docker run -d --name  -p 8001:8080 devops03102021:1.0
+  237  docker run -d   -p 8001:8080 devops03102021:1.0
+  238  docker ps
+  239  curl localhost:8001
+  240  docker images
+  241  docker logs
+  242  docker logs first
+  243  docker ps -a
+  244  docker logs 
+  245  docker stop flamboyant_wozniak 
+  246  docker ps
+  247  docker ps -a
+  248  docker logs flamboyant_wozniak
+  249  docker stats 
+  250  docker exec -it first bash
+  251  docker stats 
+  252  docker images
+  253  docker inspect devops03102021:1.0 
+  254  docker login
+  255  ls
+  256  docker images
+  257  docker push devops03102021
+  258  docker push devops03102021:1.0
+  259  docker push danamma/devops03102021:1.0
+  260  docker tag devops03102021:1.0 danamma/devops03102021:1.0
+  261  docker images
+  262  docker push danamma/devops03102021:1.0
+  263  cd
+  264  ls
+  265  cd DevOps
+  266  ls
+  267  ls -ltr
+  268  cd ../
+  269  ls
+  270  cd myapp/
+  271  ls
+  272  cd
+  273  cd snap/
+  274  ls
+  275  cd
+  276  ls
+  277  cd DevOps
+  278  cd
+  279  cd DevOps260921/
+  280  ls
+  281  ls -ltr
+  282  cat gitCommandPractice 
+  283  ls
+  284  pwd
+  285  ls
+  286  cat githistory 
+  287  cd
+  288  ls
+  289  cd DevOps260921/
+  290  ls
+  291  ls -tlr
+  292  mkdir Git
+  293  mv file1.py app.py* test.class githistory Git
+  294  ls
+  295  ls -tlr
+  296  mkdir Docker
+  297  mv ~/app.py Docker/
+  298  cat Docker/app.py 
+  299  cd
+  300  ls
+  301  mv Dockerfile ~/DevOps260921/
+  302  ls
+  303  cd DevOps260921/
+  304  ls
+  305  mv Dockerfile Docker
+  306  history
+
