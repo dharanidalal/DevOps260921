@@ -32,3 +32,18 @@
   917  docker network inspect bridge
   918  docker exec -it third bash
   919  history
+
+
+ 909  docker run -d --name second  -p 8001:8080 devops25092021:1.0
+  910  docker ps
+  911  ifconfig
+  912  docker network inspect bridge
+  913  docker exec -it second bash
+  914  docker run -d --name third  -p 8002:8080 devops25092021:1.0
+  915  docker ps
+  916  ifconfig
+  917  docker network inspect bridge
+  918  docker exec -it third bash
+  919  history
+  920  ifconfig
+
