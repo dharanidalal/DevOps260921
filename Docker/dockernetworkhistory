@@ -1,0 +1,34 @@
+886  docker ps
+  887  docker ps -a
+  888  docker rm first second
+  889  docker ps -a
+  890  docker images
+  891  docker run -d --name second  -p 8001:8080 devops25092021:1.0
+  892  docker ps -a
+  893  curl localhost:8001
+  894  history
+  895  docker ps
+  896  docker exec -it second bash
+  897  docker ps
+  898  docker stop second
+  899  docker rm second
+  900  docker ps -
+  901  docker ps -a
+  902  docker network ls
+  903  docker network prune
+  904  docker network ls
+  905  ifconfig
+  906  docker network ls
+  907  docker network inspect bridge
+  908  ifconfig
+  909  docker run -d --name second  -p 8001:8080 devops25092021:1.0
+  910  docker ps
+  911  ifconfig
+  912  docker network inspect bridge
+  913  docker exec -it second bash
+  914  docker run -d --name third  -p 8002:8080 devops25092021:1.0
+  915  docker ps
+  916  ifconfig
+  917  docker network inspect bridge
+  918  docker exec -it third bash
+  919  history
