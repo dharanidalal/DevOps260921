@@ -47,3 +47,11 @@
   919  history
   920  ifconfig
 
+886  docker network inspect bridge
+  887  docker exec -it second bash
+  888  docker network connect mynet second
+  889  docker exec -it second bash
+  890  docker network disconnect mynet second
+  891  docker exec -it second bash
+  892  history
+
